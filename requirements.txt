@@ -1,0 +1,2 @@
+pygame-ce
+PySimpleGUI-4-foss
