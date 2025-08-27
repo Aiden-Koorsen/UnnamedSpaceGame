@@ -20,9 +20,9 @@ with contextlib.redirect_stdout(None):
 pg.init()
 
 print(
-  f"Dark Snake Engine {__version__}",
+  f"Untitled Space Game Engine {__version__}",
   f"python {sys.version.split()[0]}  pygame-ce {pg.version.ver}",
-  f"© 2025 Dark Snake Games, GitHub contributors,",
+  f"© 2025 Untitled Space Game Team, GitHub contributors,",
   f"licensed under {__license__}",
   sep="\n",
   end="\n\n"
