@@ -13,6 +13,8 @@ if __name__ == "__main__":
 
         window.begin_frame()
         
+        ds.imgui.show_test_window()
+
         window.end_frame()
 
         if timer.has_elasped():
