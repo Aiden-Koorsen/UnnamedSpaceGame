@@ -10,4 +10,12 @@ class Position:
     def __init__(self, x : int = 0, y : int = 0):
         self.x = x
         self.y = y
-        self.tuple_pos = (x, y)
+
+class PlayerState:
+    def __init__(self, state: str):
+        self.state = state
+
+class PlayerControllable:
+    def __init__(self, input_manager):
+        self.im = input_manager
+

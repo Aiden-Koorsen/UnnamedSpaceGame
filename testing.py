@@ -24,12 +24,14 @@ if __name__ == "__main__":
     ent_player = entity_manager.create_new_entity("player")
     ent_player.add_component(ds.Position(200, 200))
     ent_player.add_component(ds.Renderable("gfx/player"))
+    ent_player.add_component(ds.PlayerControllable(input))
 
     ent_enemy = entity_manager.create_new_entity("enemy")
     ent_enemy.add_component(ds.Position(100, 100))
     ent_enemy.add_component(ds.Renderable("gfx/enemy"))
 
     render_system = ds.RenderableSystem(entity_manager, window.surface, asset_manager)
+    player_input_system = ds.InputSystem(entity_manager)
 
     font = ds.pygame.font.SysFont("Arial", 48) # Using a system font    
     text_surface = font.render("FPS", True, (255, 255, 255))
@@ -44,7 +46,8 @@ if __name__ == "__main__":
 
         if window.can_update():
             input.update()
-            
+            player_input_system.update()
+
             # Update timer 
             if timer.has_elasped():
                 fps = window.clock.get_fps()
@@ -52,6 +55,7 @@ if __name__ == "__main__":
                 text_rect = text_surface.get_rect()
                 text_rect.left = 10
                 text_rect.top = 10
+
 
         window.begin_frame()
 
