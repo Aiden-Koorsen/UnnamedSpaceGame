@@ -9,8 +9,10 @@ with contextlib.redirect_stdout(None):
   from .window import *
   from .input import *
   from .etypes import *
-  from .ecs.entities import *
-  from .ecs.base_components import *
+  from .entities import *
+  from .components import *
+  from .assets import *
+  from .systems import *
   # from .animated import *
   # from .gui import *
   # from .saving import *
