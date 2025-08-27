@@ -21,7 +21,7 @@ class Window:
         self.accumulator = 0.0
 
     # Handle all window events here
-    def handleEvents(self):
+    def handle_events(self):
         # Update frametiming first, so the game only updates 60 times a second
         now = time.perf_counter()
         frame_time = now - self.last_time
@@ -33,7 +33,7 @@ class Window:
                 self.running = False
 
     # Call this within your games main funciton to ensure that you only update the game 60 times per second
-    def canUpdate(self) -> bool:
+    def can_update(self) -> bool:
         if self.accumulator >= TICK_TIME:
             self.accumulator -= TICK_TIME
             return True
@@ -41,11 +41,11 @@ class Window:
         return False
 
     # Call this before drawing anything to screen
-    def beginFrame(self):
+    def begin_frame(self):
         self.surface.fill("black")
 
     # Call this after drawing to the screen
-    def endFrame(self):
+    def end_frame(self):
         pygame.display.update()
         self.clock.tick()
 

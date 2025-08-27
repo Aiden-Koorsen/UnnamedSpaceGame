@@ -6,9 +6,9 @@ import contextlib
 with contextlib.redirect_stdout(None):
   import sys
   import pygame as pg
-  from .graphics.window import *
+  from .window import *
   from .input import *
-  # from .etypes import *
+  from .etypes import *
   # from .animated import *
   # from .gui import *
   # from .saving import *

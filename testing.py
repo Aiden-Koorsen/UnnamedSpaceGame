@@ -4,17 +4,19 @@ import DSEngine_New as ds
 if __name__ == "__main__":
     window = ds.Window()
     input = ds.InputManager()
+    timer = ds.Timer(1000)
 
     while window.running:
-        window.handleEvents()
+        window.handle_events()
         input.update()
+        timer.update_timer(window.clock.get_time())
 
-        window.beginFrame()
+        window.begin_frame()
         
-        window.endFrame()
+        window.end_frame()
 
-        window.clock.tick()  # call once per frame
-        fps = window.clock.get_fps()
-        print(f"FPS: {fps:.2f}")
+        if timer.has_elasped():
+            fps = window.clock.get_fps()
+            print(f"FPS: {fps:.2f}")
 
     window.shutdown()
