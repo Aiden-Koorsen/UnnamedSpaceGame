@@ -20,4 +20,4 @@ class RenderableSystem:
                 texture = self.am.get_texture(renderable.key)
 
                 if texture is not None:
-                    self.screen.blit(texture, position.tuple_pos)
+                    self.screen.blit(texture, position.tuple_pos, area=renderable.src)
